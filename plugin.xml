@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.cranberrygame.phonegap.plugin.optionsmenu"
+    version="1.0.0">
+	
+    <name>OptionsMenu</name>
+    <description>OptionsMenu</description>
+    <license>Apache 2.0</license>
+    <keywords>optionsmenu</keywords>
+    <repo>https://github.com/cranberrygame/com.cranberrygame.phonegap.plugin.optionsmenu</repo>
+ 	
+	<!-- window.optionsmenu.xxx(); -->
+	<!-- optionsmenu.xxx(); -->	
+    <js-module src="www/optionsmenu.js" name="optionsmenu">
+        <clobbers target="window.optionsmenu" />
+    </js-module>
+	
+    <!-- android -->
+    <platform name="android">
+	    <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="OptionsMenu" >
+                <param name="android-package" value="com.cranberrygame.phonegap.plugin.OptionsMenu"/>
+            </feature>
+        </config-file>
+		
+        <source-file src="src/android/OptionsMenu.java" target-dir="src/com/cranberrygame/phonegap/plugin" />
+    </platform>
+
+</plugin>
