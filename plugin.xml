@@ -6,8 +6,8 @@
 	
     <name>OptionsMenu</name>
     <description>OptionsMenu</description>
-    <license>Apache 2.0</license>
-    <keywords>optionsmenu</keywords>
+    <license>MIT</license>
+    <keywords>phonegap, optionsmenu</keywords>
     <repo>https://github.com/cranberrygame/com.cranberrygame.phonegap.plugin.optionsmenu</repo>
  	
 	<!-- window.optionsmenu.xxx(); -->
