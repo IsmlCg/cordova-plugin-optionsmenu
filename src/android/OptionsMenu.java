@@ -17,10 +17,9 @@ import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaWebView;
 import android.app.Activity;
 import android.util.Log;
-//cranberrygame start
+//
 import android.view.Menu;
 import android.view.MenuItem;
-//cranberrygame end
 
 public class OptionsMenu extends CordovaPlugin {
 	private String menus; 
