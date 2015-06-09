@@ -1,2 +1,2 @@
 
-# com.cranberrygame.phonegap.plugin.optionsmenu
+# com.cranberrygame.cordova.plugin.optionsmenu

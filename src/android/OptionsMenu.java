@@ -6,7 +6,7 @@
 //                             https://www.scirra.com/users/cranberrygame
 // Facebook: https://www.facebook.com/profile.php?id=100006204729846
 // License: MIT (http://opensource.org/licenses/MIT)
-package com.cranberrygame.phonegap.plugin;
+package com.cranberrygame.cordova.plugin.optionsmenu;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
