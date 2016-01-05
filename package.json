@@ -1,0 +1,27 @@
+{
+  "name": "cordova-plugin-optionsmenu",
+  "version": "1.0.21",
+  "description": "OptionsMenu",
+  "cordova": {
+    "id": "cordova-plugin-optionsmenu",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cranberrygame/cordova-plugin-optionsmenu.git"
+  },
+  "keywords": [
+    "cordova",
+    "optionsmenu",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "cranberrygame",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cranberrygame/cordova-plugin-optionsmenu/issues"
+  },
+  "homepage": "https://github.com/cranberrygame/cordova-plugin-optionsmenu#readme"
+}

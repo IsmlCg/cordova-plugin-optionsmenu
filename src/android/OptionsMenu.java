@@ -22,48 +22,37 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class OptionsMenu extends CordovaPlugin {
+	protected CallbackContext callbackContextKeepCallback;
 	private String menus; 
 	
 	@Override
-	public boolean execute(String action, JSONArray args,CallbackContext callbackContext) {
-		PluginResult result = null;
-		
-		try {		
-			//args.length()
-			//args.getString(0)
-			//args.getString(1)
-			//args.Int(0)
-			//args.Int(1)
-			//args.getBoolean(0)
-			//args.getBoolean(1)
+	public boolean execute(String action, JSONArray args,CallbackContext callbackContext) throws JSONException {
+		//args.length()
+		//args.getString(0)
+		//args.getString(1)
+		//args.Int(0)
+		//args.Int(1)
+		//args.getBoolean(0)
+		//args.getBoolean(1)
 
-			if (action.equals("setMenus")) {
-				//Activity activity=cordova.getActivity();
-				//webView			
-				String menus = args.getString(0);								
-				Log.d("Menu", menus);
-				
-				this.menus = menus;
-				
-				result = new PluginResult(PluginResult.Status.OK);	
-			}		
-			else if (action.equals("showMenus")) {
-				//Activity activity=cordova.getActivity();
-				//webView			
+		if (action.equals("setUp")) {
+			callbackContextKeepCallback = callbackContext;
+		}			
+		else if (action.equals("setMenus")) {
+			//Activity activity=cordova.getActivity();
+			//webView			
+			String menus = args.getString(0);								
+			Log.d("Menu", menus);
+			
+			this.menus = menus;
+		}		
+		else if (action.equals("showMenus")) {
+			//Activity activity=cordova.getActivity();
+			//webView			
 
-				cordova.getActivity().openOptionsMenu();
-				
-				result = new PluginResult(PluginResult.Status.OK);	
-			}
-			else {
-				result = new PluginResult(PluginResult.Status.INVALID_ACTION);
-			}				
+			cordova.getActivity().openOptionsMenu();
 		}
-		catch (JSONException e) {
-		  result = new PluginResult(PluginResult.Status.JSON_EXCEPTION);
-		}
-		
-		callbackContext.sendPluginResult(result);
+
 		return true;		
 	}
 	  
@@ -90,7 +79,24 @@ public class OptionsMenu extends CordovaPlugin {
         {
 			MenuItem item = (MenuItem)data;
 					
-			webView.loadUrl(String.format("javascript:cordova.fireDocumentEvent('onMenuSelected', {'menu': '%s'});", item.getTitle()));
+			//webView.loadUrl(String.format("javascript:cordova.fireDocumentEvent('onMenuSelected', {'menu': '%s'});", item.getTitle()));
+
+			Log.d(LOG_TAG, "onOptionsItemSelected: "+ item.getTitle());
+			
+			JSONObject result = new JSONObject();
+			try {
+				result.put("event", "onMenuSelected");
+				result.put("message", item.getTitle());
+			}
+			catch(JSONException ex){
+			}			
+			//PluginResult pr = new PluginResult(PluginResult.Status.OK, "onMenuSelected");
+			PluginResult pr = new PluginResult(PluginResult.Status.OK, result);
+			pr.setKeepCallback(true);
+			callbackContextKeepCallback.sendPluginResult(pr);
+			//PluginResult pr = new PluginResult(PluginResult.Status.ERROR);
+			//pr.setKeepCallback(true);
+			//callbackContextKeepCallback.sendPluginResult(pr);				
         }
 
         return null;

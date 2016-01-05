@@ -1,0 +1,27 @@
+<html>
+<head>
+	<script type="text/javascript" src="cordova.js"></script>
+</head>
+<body>
+
+<script>
+//
+var menus = "menu1,menu2,menu3,menu4,menu5,menu6,menu7";
+
+//
+document.addEventListener("deviceready", function(){
+
+    window.optionsmenu.setUp();
+	
+	//callback
+	window.optionsmenu.onMenuSelected = function(menu) {
+        window.alert(menu);
+    };	
+}, false);
+</script>
+
+<p><button onclick="window.optionsmenu.setMenus(menus);">setMenus</button></p>
+<p><button onclick="window.optionsmenu.showMenus();">showMenus</button></p>
+
+</body>
+</html>
