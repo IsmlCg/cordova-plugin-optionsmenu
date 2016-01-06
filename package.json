@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-optionsmenu",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "OptionsMenu",
   "cordova": {
     "id": "cordova-plugin-optionsmenu",

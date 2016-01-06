@@ -1,20 +1,18 @@
-// Copyright (c) 2014 cranberrygame
-// Email: cranberrygame@yahoo.com
-// Phonegap plugin: http://www.github.com/cranberrygame
-// Construct2 phonegap plugin: https://www.scirra.com/forum/viewtopic.php?f=153&t=109586
-//                             https://dl.dropboxusercontent.com/u/186681453/index.html
-//                             https://www.scirra.com/users/cranberrygame
-// Facebook: https://www.facebook.com/profile.php?id=100006204729846
-// License: MIT (http://opensource.org/licenses/MIT)
+//Copyright (c) 2014 Sang Ki Kwon (Cranberrygame)
+//Email: cranberrygame@yahoo.com
+//Homepage: http://cranberrygame.github.io
+//License: MIT (http://opensource.org/licenses/MIT)
 package com.cranberrygame.cordova.plugin.optionsmenu;
 
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
 import org.apache.cordova.CallbackContext;
 import org.json.JSONArray;
+import org.json.JSONObject;
 import org.json.JSONException;
 import org.apache.cordova.CordovaInterface;
 import org.apache.cordova.CordovaWebView;
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.util.Log;
 //
@@ -22,6 +20,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class OptionsMenu extends CordovaPlugin {
+	private static final String LOG_TAG = "OptionsMenu";
 	protected CallbackContext callbackContextKeepCallback;
 	private String menus; 
 	
